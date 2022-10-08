@@ -20,16 +20,16 @@ input[type=text]:focus {
     border: 3px solid #555;
 }
 
+
+input:invalid {
+    border-color: red;
+}
+
+input:valid {
+    border-color: green;
+}
+
 body  { 
     background-color: rgb(153, 224, 219);
     text-align: center;
 } 
-
-.error{
-    border-color: red;
-    border: solid 2px red;
-}
-.correct{
-    border-color: green;
-    border: solid 2px green;
-}
