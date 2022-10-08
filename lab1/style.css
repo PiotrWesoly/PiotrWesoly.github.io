@@ -22,11 +22,11 @@ input[type=text]:focus {
 
 
 input:invalid {
-    border-color: red;
+    border: 5px solid red;
 }
 
 input:valid {
-    border-color: green;
+    border: 5px solid green;
 }
 
 body  { 
