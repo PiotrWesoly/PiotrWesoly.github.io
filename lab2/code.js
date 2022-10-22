@@ -12,7 +12,7 @@ function fillOutRandom() {
     document.getElementById("phone").value = '+48798293493';
     document.getElementById("date").value = "2022-10-19";
     document.getElementById("dateMonFri").value = "2022-10-25";
-    document.querySelector('input[type="time"]').value = '11:30';
+    document.getElementById("time12").value = '11:30';
     document.getElementById("time24").value = '11:40';
 
 
