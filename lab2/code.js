@@ -10,6 +10,8 @@ function fillOutRandom() {
     document.getElementById("file").value = '/etc/hosts';
     document.getElementById("ip6").value = 'FE80:0000:0000:0000:3423:B3FF:F8FF:1231';
     document.getElementById("phone").value = '+48798293493';
+    document.getElementById("date").value = "2022-10-19";
+    document.getElementById("dateMonFri").value = "2022-10-25";
     document.querySelector('input[type="time"]').value = '11:30';
     document.getElementById("time24").value = '11:40';
 
