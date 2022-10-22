@@ -11,5 +11,7 @@ function fillOutRandom() {
     document.getElementById("ip6").value = 'FE80:0000:0000:0000:3423:B3FF:F8FF:1231';
     document.getElementById("phone").value = '+48798293493';
     document.querySelector('input[type="time"]').value = '11:30';
+    document.getElementById("time24").value = '11:40';
+
 
 }
