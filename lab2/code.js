@@ -10,5 +10,4 @@ function fillOutRandom() {
     document.getElementById("file").value = '/etc/hosts';
     document.getElementById("ip6").value = 'FE80:0000:0000:0000:3423:B3FF:F8FF:1231';
     document.getElementById("phone").value = '+48798293493';
-    
 }
