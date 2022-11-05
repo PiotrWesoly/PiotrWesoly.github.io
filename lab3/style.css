@@ -1,6 +1,18 @@
-div{height:200px; width:800px; }
-.one{float:left;}
-.two{float:right;}
+html,body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.one{width: 30%;}
+.two{width: 70%;}
+
+
+.platform{
+    width: 100%;
+    height: 80%;
+    background-color: bisque;
+}
 
 .generator {
     border-style: solid;
