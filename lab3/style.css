@@ -1,0 +1,14 @@
+div{height:200px; width:800px; }
+.one{float:left;}
+.two{float:right;}
+
+.generator {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+  }
+  
+  .box {
+      height: 100px;
+      width: 100px;
+  }
