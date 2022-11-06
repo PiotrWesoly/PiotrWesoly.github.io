@@ -7,36 +7,41 @@
     <script src="code.js" charset="utf-8"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="one">
-        <ol>
-            <li class="element" id='element0' draggable="true">
-                <input class="input" type="text" value="element0" draggable="true">
-            </li>
-            <li class="element" id='element1' draggable="true">
-                <input class="input" type="text" value="element1" draggable="true">
-            </li>
-            <li class="element" id='element2' draggable="true">
-                <input class="input" type="text" value="element2" draggable="true">
-            </li>
-            <li class="element" id='element3' draggable="true">
-                <input class="input" type="text" value="element3" draggable="true">
-            </li>
-            <li class="element" id='element4' draggable="true">
-                <input class="input" type="text" value="element4" draggable="true">
-            </li>
-        </ol>
-    </div>
-
-    <div class="two">
-        <div class="generator">
-            <button type="button" onclick="setRandomColor()">Generate box</button>
-            <div id="box" class="box" draggable="true"/>
+<body onload="init(event)">
+    <div style="display: flex;">
+        <div class="one">
+            <ol>
+                <li class="element" id='element0' draggable="true">
+                    <input class="input" type="text" value="element0" draggable="true">
+                </li>
+                <li class="element" id='element1' draggable="true">
+                    <input class="input" type="text" value="element1" draggable="true">
+                </li>
+                <li class="element" id='element2' draggable="true">
+                    <input class="input" type="text" value="element2" draggable="true">
+                </li>
+                <li class="element" id='element3' draggable="true">
+                    <input class="input" type="text" value="element3" draggable="true">
+                </li>
+                <li class="element" id='element4' draggable="true">
+                    <input class="input" type="text" value="element4" draggable="true">
+                </li>
+            </ol>
         </div>
-    </div>
 
-    <div class="platform">
-        
+        <div class="two">
+            <div class="generator">
+                <button type="button" onclick="setRandomColor()">Generate box</button>
+                <div id="box" class="box" draggable="true"></div>
+            </div>
+        </div>
+        </div>
 
-    </div>
+        <div class="three">
+            <table id="platform" class="platform">
+
+            </table>
+        </div>
+    
+
 </body>
