@@ -32,3 +32,22 @@ for (var i in clientData) {
     objectStore.add(clientData[i]);
 }
 };
+
+const clientData = [
+    {
+      name: "Piotr",
+      lastName: "Wesoly",
+      email: "PiotrWesoly@gmail.com",
+      ID: 'CCU238293',
+      addres: "Kilinskiego 12",
+      phoneNumber: "500500200"
+    },
+    {
+      name: "Pawel",
+      lastName: "Rosiak",
+      email: "pawelRosiak@gmail.com",
+      ID: 'CCU238293',
+      address: "Piotrkowska 12",
+      phoneNumber: "500400200"
+    },
+  ];
