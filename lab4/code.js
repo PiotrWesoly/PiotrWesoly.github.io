@@ -14,7 +14,7 @@ drawTable();
 
 request.onupgradeneeded = function (event) {
 var db = event.target.result;
-var objectStore = db.createObjectStore("clientos", {
+var objectStore = db.createObjectStore("clientsy", {
     autoIncrement: true,
 });
 
@@ -64,7 +64,7 @@ function add(event) {
     var formElements = document.getElementById("form");
 
     var request = db
-      .transaction(["clientos"], "readwrite")
+      .transaction(["client"], "readwrite")
       .objectStore("client")
       .add({
         name: formElements[0].value,
@@ -119,7 +119,7 @@ function add(event) {
   }
 
   function generateTable(table, filterItems = []) {
-    let objectStore = db.transaction("clientos").objectStore("client");
+    let objectStore = db.transaction("client").objectStore("client");
 
     objectStore.openCursor().onsuccess = function (event) {
       var cursor = event.target.result;
