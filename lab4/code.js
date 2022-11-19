@@ -60,3 +60,31 @@ const clientData = [
     document.getElementById("ID").value = "DBZ843920";
     document.getElementById("phoneNumber").value = '+48798293493';
 }
+
+function add(event) {
+    event.preventDefault();
+
+    var formElements = document.getElementById("form");
+
+    var request = db
+      .transaction(["client"], "readwrite")
+      .objectStore("client")
+      .add({
+        name: formElements[0].value,
+        lastName: formElements[1].value,
+        email: formElements[3].value,
+        postal: formElements[4].value,
+        ID: formElements[5].value,
+        phoneNumber: formElements[6].value,
+      });
+
+    request.onsuccess = function (event) {
+      console.log("Client added");
+    };
+
+    request.onerror = function (event) {
+      alert(
+        "Unable to add data\r\ user with that email aready exist in your database! "
+      );
+    };
+  }
