@@ -20,7 +20,7 @@ window.indexedDB =
 
 
 let db;
-let request = window.indexedDB.open("newDatabase", 2);
+let request = window.indexedDB.open("newDatabase", 1);
 
 
 request.onerror = function (event) {
