@@ -1,5 +1,5 @@
 let db;
-let request = window.indexedDB.open("database", 1);
+let request = window.indexedDB.open("newDatabase", 1);
 
 
 request.onerror = function (event) {
@@ -64,7 +64,7 @@ function add(event) {
     var formElements = document.getElementById("form");
 
     var request = db
-      .transaction(["client"], "readwrite")
+      .transaction(["client"], 'readwrite')
       .objectStore("client")
       .add({
         name: formElements[0].value,
