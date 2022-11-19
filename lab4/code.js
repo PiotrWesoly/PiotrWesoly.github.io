@@ -1,5 +1,5 @@
 let db;
-let request = window.indexedDB.open("newDatabase", 1);
+let request = window.indexedDB.open("database", 1);
 
 
 request.onerror = function (event) {
