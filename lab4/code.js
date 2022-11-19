@@ -14,7 +14,7 @@ drawTable();
 
 request.onupgradeneeded = function (event) {
 var db = event.target.result;
-var objectStore = db.createObjectStore("clients", {
+var objectStore = db.createObjectStore("clientos", {
     autoIncrement: true,
 });
 
