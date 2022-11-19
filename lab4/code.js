@@ -64,7 +64,7 @@ function add(event) {
     var formElements = document.getElementById("form");
 
     var request = db
-      .transaction(["client"], "readwrite")
+      .transaction(["clientos"], "readwrite")
       .objectStore("client")
       .add({
         name: formElements[0].value,
@@ -119,7 +119,7 @@ function add(event) {
   }
 
   function generateTable(table, filterItems = []) {
-    let objectStore = db.transaction("client").objectStore("client");
+    let objectStore = db.transaction("clientos").objectStore("client");
 
     objectStore.openCursor().onsuccess = function (event) {
       var cursor = event.target.result;
