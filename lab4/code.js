@@ -51,3 +51,12 @@ const clientData = [
       phoneNumber: "500400200"
     },
   ];
+
+  function fillOutRandom() {
+    document.getElementById("fname").value = "Piotr";
+    document.getElementById("flast").value = "Wesoly";
+    document.getElementById("fmail").value = "piotr@gmail.com";
+    document.getElementById("postal").value = "90-111";
+    document.getElementById("ID").value = "DBZ843920";
+    document.getElementById("phoneNumber").value = '+48798293493';
+}
