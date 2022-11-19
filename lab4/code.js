@@ -49,12 +49,12 @@ const clientData = [
   ];
 
   function fillOutRandom() {
-    document.getElementById("fname").value = "Piotr";
-    document.getElementById("flast").value = "Wesoly";
-    document.getElementById("fmail").value = "piotr@gmail.com";
-    document.getElementById("postal").value = "90-111";
-    document.getElementById("ID").value = "DBZ843920";
-    document.getElementById("phoneNumber").value = '+48798293493';
+    document.getElementById("fname").value = "Pawel";
+    document.getElementById("flast").value = "Mark";
+    document.getElementById("fmail").value = "piotsdr@gmasdil.com";
+    document.getElementById("postal").value = "93-211";
+    document.getElementById("ID").value = "DBZ843420";
+    document.getElementById("phoneNumber").value = '+48798233493';
 }
 
 function add(event) {
