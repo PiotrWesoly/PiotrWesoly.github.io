@@ -21,7 +21,7 @@ window.indexedDB =
 
 let db;
 let request = window.indexedDB.open("newDatabase", 1);
-
+var objectstore;
 
 request.onerror = function (event) {
 console.log("error: The database is opened failed");
@@ -36,7 +36,7 @@ drawTable();
 request.onupgradeneeded = function (event) {
 var db = event.target.result;
 console.log("Object Store creation");
-var objectstore = db.createObjectStore("client", {
+objectstore = db.createObjectStore("client", {
     autoIncrement: true,
 });
 
