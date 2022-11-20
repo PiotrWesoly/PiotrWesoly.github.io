@@ -40,16 +40,23 @@ objectstore = db.createObjectStore("client", {
     autoIncrement: true,
 });
 
-objectstore.createIndex("name", "name", { unique: false });
-objectstore.createIndex("lastName", "lastName", { unique: false });
-objectstore.createIndex("email", "email", { unique: true });
-objectstore.createIndex("ID", "ID", { unique: true });
-objectstore.createIndex("postal", "postal", { unique: false });
-objectstore.createIndex("phoneNumber", "phoneNumber", { unique: true });
+objectStore.transaction.oncomplete = (event) => {
 
-for (var i in clientData) {
-    objectstore.add(clientData[i]);
-}
+    console.log("Object Store onComplete");
+    // Store values in the newly created objectStore.
+    const customerObjectStore = db.transaction("client", "readwrite").objectStore("client");
+
+    objectstore.createIndex("name", "name", { unique: false });
+    objectstore.createIndex("lastName", "lastName", { unique: false });
+    objectstore.createIndex("email", "email", { unique: true });
+    objectstore.createIndex("ID", "ID", { unique: true });
+    objectstore.createIndex("postal", "postal", { unique: false });
+    objectstore.createIndex("phoneNumber", "phoneNumber", { unique: true });
+
+    for (var i in clientData) {
+        objectstore.add(clientData[i]);
+    }
+  };
 };
 
 const clientData = [
