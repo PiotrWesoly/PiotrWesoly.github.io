@@ -30,7 +30,7 @@ window.indexedDB =
 // };
 
 let db;
-let request = window.indexedDB.open("newDatabase", 1);
+let request = window.indexedDB.open("newDatabase222", 2);
 
 request.onerror = function (event) {
 console.log("error: The database is opened failed");
