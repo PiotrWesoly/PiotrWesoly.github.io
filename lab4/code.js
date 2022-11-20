@@ -18,10 +18,19 @@ window.indexedDB =
         );
       }
 
+var req = indexedDB.deleteDatabase("newDatabase");
+req.onsuccess = function () {
+    console.log("Deleted database successfully");
+};
+req.onerror = function () {
+    console.log("Couldn't delete database");
+};
+req.onblocked = function () {
+    console.log("Couldn't delete database due to the operation being blocked");
+};
 
 let db;
 let request = window.indexedDB.open("newDatabase", 1);
-var objectstore;
 
 request.onerror = function (event) {
 console.log("error: The database is opened failed");
@@ -36,27 +45,20 @@ drawTable();
 request.onupgradeneeded = function (event) {
 var db = event.target.result;
 console.log("Object Store creation");
-objectstore = db.createObjectStore("client", {
+var objectstore = db.createObjectStore("client", {
     autoIncrement: true,
 });
 
-objectStore.transaction.oncomplete = (event) => {
+objectstore.createIndex("name", "name", { unique: false });
+objectstore.createIndex("lastName", "lastName", { unique: false });
+objectstore.createIndex("email", "email", { unique: true });
+objectstore.createIndex("ID", "ID", { unique: true });
+objectstore.createIndex("postal", "postal", { unique: false });
+objectstore.createIndex("phoneNumber", "phoneNumber", { unique: true });
 
-    console.log("Object Store onComplete");
-    // Store values in the newly created objectStore.
-    const customerObjectStore = db.transaction("client", "readwrite").objectStore("client");
-
-    objectstore.createIndex("name", "name", { unique: false });
-    objectstore.createIndex("lastName", "lastName", { unique: false });
-    objectstore.createIndex("email", "email", { unique: true });
-    objectstore.createIndex("ID", "ID", { unique: true });
-    objectstore.createIndex("postal", "postal", { unique: false });
-    objectstore.createIndex("phoneNumber", "phoneNumber", { unique: true });
-
-    for (var i in clientData) {
-        objectstore.add(clientData[i]);
-    }
-  };
+for (var i in clientData) {
+    objectstore.add(clientData[i]);
+}
 };
 
 const clientData = [
