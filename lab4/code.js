@@ -35,19 +35,19 @@ drawTable();
 
 request.onupgradeneeded = function (event) {
 var db = event.target.result;
-var objectStore = db.createObjectStore("client", {
+var objectstore = db.createObjectStore("client", {
     autoIncrement: true,
 });
 
-objectStore.createIndex("name", "name", { unique: false });
-objectStore.createIndex("lastName", "lastName", { unique: false });
-objectStore.createIndex("email", "email", { unique: true });
-objectStore.createIndex("ID", "ID", { unique: true });
-objectStore.createIndex("postal", "postal", { unique: false });
-objectStore.createIndex("phoneNumber", "phoneNumber", { unique: true });
+objectstore.createIndex("name", "name", { unique: false });
+objectstore.createIndex("lastName", "lastName", { unique: false });
+objectstore.createIndex("email", "email", { unique: true });
+objectstore.createIndex("ID", "ID", { unique: true });
+objectstore.createIndex("postal", "postal", { unique: false });
+objectstore.createIndex("phoneNumber", "phoneNumber", { unique: true });
 
 for (var i in clientData) {
-    objectStore.add(clientData[i]);
+    objectstore.add(clientData[i]);
 }
 };
 
@@ -140,9 +140,9 @@ function add(event) {
   }
 
   function generateTable(table, filterItems = []) {
-    let objectStore = db.transaction("client").objectStore("client");
+    let objectstore = db.transaction("client").objectStore("client");
 
-    objectStore.openCursor().onsuccess = function (event) {
+    objectstore.openCursor().onsuccess = function (event) {
       var cursor = event.target.result;
 
       if (cursor) {
