@@ -18,16 +18,16 @@ window.indexedDB =
         );
       }
 
-var req = indexedDB.deleteDatabase("newDatabase");
-req.onsuccess = function () {
-    console.log("Deleted database successfully");
-};
-req.onerror = function () {
-    console.log("Couldn't delete database");
-};
-req.onblocked = function () {
-    console.log("Couldn't delete database due to the operation being blocked");
-};
+// var req = indexedDB.deleteDatabase("newDatabase");
+// req.onsuccess = function () {
+//     console.log("Deleted database successfully");
+// };
+// req.onerror = function () {
+//     console.log("Couldn't delete database");
+// };
+// req.onblocked = function () {
+//     console.log("Couldn't delete database due to the operation being blocked");
+// };
 
 let db;
 let request = window.indexedDB.open("newDatabase", 1);
