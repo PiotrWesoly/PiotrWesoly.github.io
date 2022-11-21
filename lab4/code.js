@@ -18,19 +18,8 @@ window.indexedDB =
         );
       }
 
-// var req = indexedDB.deleteDatabase("newDatabase");
-// req.onsuccess = function () {
-//     console.log("Deleted database successfully");
-// };
-// req.onerror = function () {
-//     console.log("Couldn't delete database");
-// };
-// req.onblocked = function () {
-//     console.log("Couldn't delete database due to the operation being blocked");
-// };
-
 let db;
-let request = window.indexedDB.open("newDatabase222", 3);
+let request = window.indexedDB.open("newDatabase121", 1);
 
 request.onerror = function (event) {
 console.log("error: The database is opened failed");
@@ -51,10 +40,10 @@ var objectstore = db.createObjectStore("client", {
 
 objectstore.createIndex("name", "name", { unique: false });
 objectstore.createIndex("lastName", "lastName", { unique: false });
-objectstore.createIndex("email", "email", { unique: true });
-objectstore.createIndex("ID", "ID", { unique: true });
+objectstore.createIndex("email", "email", { unique: false });
+objectstore.createIndex("ID", "ID", { unique: false });
 objectstore.createIndex("postal", "postal", { unique: false });
-objectstore.createIndex("phoneNumber", "phoneNumber", { unique: true });
+objectstore.createIndex("phoneNumber", "phoneNumber", { unique: false });
 
 for (var i in clientData) {
     objectstore.add(clientData[i]);
@@ -74,7 +63,7 @@ const clientData = [
       name: "Pawel",
       lastName: "Rosiak",
       email: "pawelRosiak@gmail.com",
-      ID: 'CCU238293',
+      ID: 'CCU233293',
       postal: "93-234",
       phoneNumber: "500400200"
     },
