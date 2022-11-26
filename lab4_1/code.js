@@ -70,6 +70,7 @@ const clientData = [
   ];
 
   function fillOutRandom() {
+    document.getElementById("idInput").value = 8;
     document.getElementById("fname").value = "Pawel";
     document.getElementById("flast").value = "Mark";
     document.getElementById("fmail").value = "piotsdr@gmasdil.com";
