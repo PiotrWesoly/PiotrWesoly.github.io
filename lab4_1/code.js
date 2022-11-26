@@ -57,7 +57,7 @@ const clientData = [
       email: "PiotrWesoly@gmail.com",
       postal: "90-234",
       ID: 'CCU238293',
-      phoneNumber: "500500200"
+      phoneNumber: "+48500500200"
     },
     {
       name: "Pawel",
@@ -65,7 +65,7 @@ const clientData = [
       email: "pawelRosiak@gmail.com",
       postal: "93-234",
       ID: 'CCU233293',
-      phoneNumber: "500400200"
+      phoneNumber: "+48500400200"
     },
   ];
 
