@@ -51,3 +51,19 @@ th{
 td{
   border: solid thin black;
 }
+
+.inline {
+  display:inline-block;
+  margin-right:5px;
+}
+
+div.submitBtnDiv {
+  width: 1300px;
+  height:300px;
+  border:1px solid black;
+}
+
+input[type="submit"] {
+   display: block;
+   margin : 0 auto;
+}

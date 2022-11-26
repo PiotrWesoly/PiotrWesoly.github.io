@@ -31,11 +31,14 @@
         <label for="phone">Phone number:</label>
         <input type="text" id="phoneNumber" pattern="(\+[0-9]{1,3})?[0-9]{9}" placeholder="+48798293493"  required><br><br>
         <p></p>
-        <input id="submitBtn" type="submit" value="Submit">
+            <input id="submitBtn" type="submit" value="Submit">
+        </div>
     </form>
-    <button id="editBtn" onclick="editData(event)" disabled>Edit entry</button>
-    <br/>
-    <button onclick="fillOutRandom()">Fill form</button>
+    <div>
+        <button class ="inline" id="editBtn" onclick="editData(event)" disabled>Edit entry</button>
+        <!-- <br/> -->
+        <button class ="inline"  onclick="fillOutRandom()">Fill form</button>
+    </div>
     <p></p>
 
     <div id="tableDiv"></div>
