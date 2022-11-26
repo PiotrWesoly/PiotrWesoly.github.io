@@ -209,6 +209,7 @@ function add(event) {
   function editData(event) {
     event.preventDefault();
     let formElements = document.getElementById("addForm");
+    document.getElementById("cancelBtn").disabled = false;
 
     console.log(`Editing ${parseInt(formElements[0].value)}`);
 
@@ -257,6 +258,7 @@ function add(event) {
   function fillEditData(id) {
     document.getElementById("submitBtn").disabled = true;
     document.getElementById("editBtn").disabled = false;
+    document.getElementById("cancelBtn").disabled = false;
 
     var objectStore = db
       .transaction(["client"], "readwrite")
@@ -288,4 +290,12 @@ function add(event) {
     document.getElementById("postal").value = ""
     document.getElementById("ID").value = ""
     document.getElementById("phoneNumber").value = ""
+  }
+
+  function cancelEdit(event) {
+    event.preventDefault();
+    clearFrom();
+    document.getElementById("editBtn").disabled = true;
+    document.getElementById("cancelBtn").disabled = true;
+    document.getElementById("submitBtn").disabled = false;
   }
