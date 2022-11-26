@@ -9,7 +9,7 @@
 </head>
 <body>
     
-    <form id="form" name="myForm"  method="post" onsubmit="return add(event)">
+    <form id="addForm" name="myForm"  method="post" onsubmit="return add(event)">
         <label for="id">Id:</label>
         <input id="idInput" name="id" type="number" required/>
         <p></p>
@@ -31,11 +31,10 @@
         <label for="phone">Phone number:</label>
         <input type="text" id="phoneNumber" pattern="(\+[0-9]{1,3})?[0-9]{9}" placeholder="+48798293493"  required><br><br>
         <p></p>
-        <input type="submit" value="Submit">
+        <input id="submitBtn" type="submit" value="Submit">
     </form>
     <button id="editBtn" onclick="editData(event)" disabled>Edit entry</button>
-    <div id="jsonForm"></div>
-    <br />
+    <br/>
     <button onclick="fillOutRandom()">Fill form</button>
     <p></p>
 

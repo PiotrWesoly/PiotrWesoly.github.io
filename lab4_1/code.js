@@ -81,18 +81,18 @@ const clientData = [
 function add(event) {
     event.preventDefault();
 
-    var formElements = document.getElementById("form");
+    var formElements = document.getElementById("addForm");
 
     var request = db
       .transaction(["client"], 'readwrite')
       .objectStore("client")
       .add({
-        name: formElements[0].value,
-        lastName: formElements[1].value,
-        email: formElements[2].value,
-        postal: formElements[3].value,
-        ID: formElements[4].value,
-        phoneNumber: formElements[5].value,
+        name: formElements[1].value,
+        lastName: formElements[2].value,
+        email: formElements[3].value,
+        postal: formElements[4].value,
+        ID: formElements[5].value,
+        phoneNumber: formElements[6].value,
       });
 
     request.onsuccess = function (event) {
@@ -180,8 +180,14 @@ function add(event) {
         removeButton.setAttribute("onclick", `remove(${cursor.key})`);
         removeButton.innerHTML = "remove";
         cell.appendChild(removeButton);
-        cursor.continue();
 
+        let editButton = document.createElement("button");
+        editButton.setAttribute("id", "editButton" + cursor.key);
+        editButton.setAttribute("onclick", `fillEditData(${cursor.key})`);
+        editButton.innerHTML = "edit";
+        cell.appendChild(editButton);
+
+        cursor.continue();
       } else {
         console.log("No more data");
       }
@@ -241,5 +247,45 @@ function add(event) {
         console.log("Record updated");
         drawTable();
       };
+
+      clearFrom();
+      document.getElementById("editBtn").disabled = true;
+      document.getElementById("submitBtn").disabled = false;
     };
+  }
+
+  function fillEditData(id) {
+    document.getElementById("submitBtn").disabled = true;
+    document.getElementById("editBtn").disabled = false;
+
+    var objectStore = db
+      .transaction(["client"], "readwrite")
+      .objectStore("client");
+
+    var request = objectStore.get(id);
+    request.onerror = function (event) {
+      console.log("Something went wrong");
+    };
+    request.onsuccess = function (event) {
+    
+      let data = event.target.result;
+
+      document.getElementById("idInput").value = id;
+      document.getElementById("fname").value = data.name;
+      document.getElementById("flast").value = data.lastName;
+      document.getElementById("fmail").value = data.email;
+      document.getElementById("postal").value = data.postal;
+      document.getElementById("ID").value = data.ID;
+      document.getElementById("phoneNumber").value = data.phoneNumber;
+    };
+  }
+
+  function clearFrom(){
+    document.getElementById("idInput").value = ""
+    document.getElementById("fname").value = ""
+    document.getElementById("flast").value = ""
+    document.getElementById("fmail").value = ""
+    document.getElementById("postal").value = ""
+    document.getElementById("ID").value = ""
+    document.getElementById("phoneNumber").value = ""
   }
