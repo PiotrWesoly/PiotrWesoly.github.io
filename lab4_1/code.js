@@ -259,6 +259,8 @@ function add(event) {
     document.getElementById("submitBtn").disabled = true;
     document.getElementById("editBtn").disabled = false;
     document.getElementById("cancelBtn").disabled = false;
+    document.getElementById("fillBtn").disabled = true;
+
 
     var objectStore = db
       .transaction(["client"], "readwrite")
