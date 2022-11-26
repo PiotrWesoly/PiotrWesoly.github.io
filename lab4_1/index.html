@@ -11,7 +11,7 @@
     
     <form id="form" name="myForm"  method="post" onsubmit="return add(event)">
         <label for="id">Id:</label>
-        <input id="idInput" name="id" type="number" />
+        <input id="idInput" name="id" type="number" required/>
         <p></p>
         <label for="fname">First name:</label>
         <input type="text" id="fname" name="firstName" placeholder="Piotr" required><br><br>
@@ -33,6 +33,9 @@
         <p></p>
         <input type="submit" value="Submit">
     </form>
+    <button id="editBtn" onclick="editData(event)" disabled>Edit entry</button>
+    <div id="jsonForm"></div>
+    <br />
     <button onclick="fillOutRandom()">Fill form</button>
     <p></p>
 

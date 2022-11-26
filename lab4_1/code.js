@@ -212,28 +212,26 @@ function add(event) {
 
     var request = objectStore.get(parseInt(formElements[0].value));
     request.onerror = function (event) {
-      // Handle errors!
+     
       console.log(
-        "Something went wrong, prob client with that id does not exits"
+        "Client with that id does not exits!"
       );
     };
     request.onsuccess = function (event) {
-      // Get the old value that we want to update
+
       let data = event.target.result;
 
       let client = {
         name: formElements[1].value,
         lastName: formElements[2].value,
-        age: formElements[3].value,
-        email: formElements[4].value,
-        pesel: formElements[5].value,
-        address: formElements[6].value,
-        phoneNumber: formElements[7].value,
+        email: formElements[3].value,
+        postal: formElements[4].value,
+        ID: formElements[5].value,
+        phoneNumber: formElements[6].value,
       };
 
       console.log(client);
 
-      // Get the old value that we want to update
       let requestUpdate = db
         .transaction(["client"], "readwrite")
         .objectStore("client")
