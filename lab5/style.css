@@ -1,0 +1,69 @@
+form, div  { 
+  display: table; 
+  align-self: center;  
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+p { 
+  display: table-row;  
+}
+
+label {   
+  display: table-cell; 
+  font-size: 17px;}
+
+input { display: table-cell; }
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+
+input:invalid {
+  border: 5px solid red;
+}
+
+input:valid {
+  border: 5px solid green;
+}
+
+body  { 
+  background-color: rgb(153, 224, 219);
+  text-align: center;
+} 
+
+th, td{
+  align-items: center;
+  text-align: center;
+  /* padding-left: 30px; */
+  padding-inline: 10px;
+}
+
+#tableDiv{
+  margin-top: 20px;
+}
+
+th{
+  border: solid thick black;
+}
+td{
+  border: solid thin black;
+}
+
+.inline {
+  display:inline-block;
+  margin-right:5px;
+}
+
+div.submitBtnDiv {
+  width: 1300px;
+  height:300px;
+  border:1px solid black;
+}
+
+input[type="submit"] {
+   display: block;
+   margin : 0 auto;
+}
