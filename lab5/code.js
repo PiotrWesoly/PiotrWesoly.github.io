@@ -302,3 +302,18 @@ function add(event) {
     document.getElementById("cancelBtn").disabled = true;
     document.getElementById("submitBtn").disabled = false;
   }
+
+  function search(event) {
+    event.preventDefault();
+
+    let searchInputs = document
+      .getElementById("searchBar")
+      .value.split(" ");
+
+    drawTable(searchInputs);
+  }
+
+  document.getElementById("searchBar")
+          .addEventListener("input", (event) => {
+          drawTable(event.target.value.split(" "));
+        });
