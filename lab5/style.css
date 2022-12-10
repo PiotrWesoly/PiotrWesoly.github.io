@@ -67,3 +67,31 @@ input[type="submit"] {
    display: block;
    margin : 0 auto;
 }
+
+#submitBtn:disabled{
+  margin-left: 20px;
+  height: 20px;
+  width: 70px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.305);
+  color: rgba(169, 169, 169, 0.61);
+  border: solid 2px rgba(169, 169, 169, 0.311);
+}
+#submitBtn{
+  margin-left: 20px;
+  height: 20px;
+  width: 70px;
+  border-radius: 8px;
+  background-color: aliceblue;
+  color: black;
+  border: solid 2px black;
+}
+
+#searchBar{
+  text-align: center;
+  margin-left: 40px;
+  height: 15px;
+  width: 200px;
+  border-radius: 8px;
+  border: solid 2px black;
+}
