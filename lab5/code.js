@@ -141,11 +141,11 @@ function add(event) {
     let thead = table.createTHead();
     let row = thead.insertRow();
 
-    // Create id column
-    let th = document.createElement("th");
-    let text = document.createTextNode("id");
-    th.appendChild(text);
-    row.appendChild(th);
+    // // Create id column
+    // let th = document.createElement("th");
+    // let text = document.createTextNode("id");
+    // th.appendChild(text);
+    // row.appendChild(th);
 
     for (let key of data) {
       let th = document.createElement("th");
@@ -182,9 +182,9 @@ function add(event) {
         console.log(cursor.value)
 
         let row = table.insertRow();
-        let cell = row.insertCell();
+        // let cell = row.insertCell();
         let text = document.createTextNode(cursor.key);
-        cell.appendChild(text);
+        // cell.appendChild(text);
         for (const [key, value] of Object.entries(cursor.value)) {
           let cell = row.insertCell();
           let text = document.createTextNode(value);
