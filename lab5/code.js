@@ -71,13 +71,28 @@ const clientData = [
   ];
 
   function fillOutRandom() {
-    // document.getElementById("idInput").value = 8;
-    document.getElementById("fname").value = "Pawel";
-    document.getElementById("flast").value = "Mark";
-    document.getElementById("fmail").value = "piotsdr@gmasdil.com";
-    document.getElementById("postal").value = "93-211";
-    document.getElementById("ID").value = "DBZ843420";
-    document.getElementById("phoneNumber").value = '+48798233493';
+    
+    const randomName = Math.floor(Math.random() * 5);
+    const randomLastName = Math.floor(Math.random() * 5);
+    const randomMail = Math.floor(Math.random() * 5);
+    const randomPostal = Math.floor(Math.random() * 5);
+    const randomID = Math.floor(Math.random() * 5);
+    const randomPhone = Math.floor(Math.random() * 5);
+
+    let names = ["Marek", "Piotr", "Maciek", "Lukasz", "Pawel"];
+    let lastNames = ["Wojciechowski", "Marciniak", "Kwiatkowski", "Malkowski", "Wesoly"];
+    let mails = ["Pies@gmail.com", "Kot@gmail.com", "Dragon@gmail.com", "Prog@gmail.com" ,"Luke@gmail.com"]
+    let postal = ["93-111", "91-211", "23-211", "93-211", "33-211"]
+    let ID = ["DBZ843420", "DAA843320", "GSZ843420", "ABC843520", "LDK843520"]
+    let phoneNumbers = ['+48798234593', '+48798234493', '+48798233453', '+48775567493', '+48775633493']
+
+
+    document.getElementById("fname").value = names[randomName];
+    document.getElementById("flast").value = lastNames[randomLastName];
+    document.getElementById("fmail").value = mails[randomMail];
+    document.getElementById("postal").value = postal[randomPostal];
+    document.getElementById("ID").value = ID[randomID];
+    document.getElementById("phoneNumber").value = phoneNumbers[randomPhone];
 }
 
 function add(event) {
