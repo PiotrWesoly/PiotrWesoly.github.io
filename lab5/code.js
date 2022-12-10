@@ -20,6 +20,7 @@ window.indexedDB =
 
 let db;
 let request = window.indexedDB.open("newDatabase121", 1);
+var idGlobal;
 
 request.onerror = function (event) {
 console.log("error: The database is opened failed");
@@ -70,7 +71,7 @@ const clientData = [
   ];
 
   function fillOutRandom() {
-    document.getElementById("idInput").value = 8;
+    // document.getElementById("idInput").value = 8;
     document.getElementById("fname").value = "Pawel";
     document.getElementById("flast").value = "Mark";
     document.getElementById("fmail").value = "piotsdr@gmasdil.com";
@@ -88,12 +89,12 @@ function add(event) {
       .transaction(["client"], 'readwrite')
       .objectStore("client")
       .add({
-        name: formElements[1].value,
-        lastName: formElements[2].value,
-        email: formElements[3].value,
-        postal: formElements[4].value,
-        ID: formElements[5].value,
-        phoneNumber: formElements[6].value,
+        name: formElements[0].value,
+        lastName: formElements[1].value,
+        email: formElements[2].value,
+        postal: formElements[3].value,
+        ID: formElements[4].value,
+        phoneNumber: formElements[5].value,
       });
 
     request.onsuccess = function (event) {
@@ -212,13 +213,13 @@ function add(event) {
     let formElements = document.getElementById("addForm");
     document.getElementById("cancelBtn").disabled = false;
 
-    console.log(`Editing ${parseInt(formElements[0].value)}`);
+    console.log(`Editing ${parseInt(idGlobal)}`);
 
     var objectStore = db
       .transaction(["client"], "readwrite")
       .objectStore("client");
 
-    var request = objectStore.get(parseInt(formElements[0].value));
+    var request = objectStore.get(parseInt(idGlobal));
     request.onerror = function (event) {
      
       console.log(
@@ -230,12 +231,12 @@ function add(event) {
       let data = event.target.result;
 
       let client = {
-        name: formElements[1].value,
-        lastName: formElements[2].value,
-        email: formElements[3].value,
-        postal: formElements[4].value,
-        ID: formElements[5].value,
-        phoneNumber: formElements[6].value,
+        name: formElements[0].value,
+        lastName: formElements[1].value,
+        email: formElements[2].value,
+        postal: formElements[3].value,
+        ID: formElements[4].value,
+        phoneNumber: formElements[5].value,
       };
 
       console.log(client);
@@ -243,7 +244,7 @@ function add(event) {
       let requestUpdate = db
         .transaction(["client"], "readwrite")
         .objectStore("client")
-        .put(client, parseInt(formElements[0].value));
+        .put(client, parseInt(idGlobal));
 
       requestUpdate.onsuccess = function (event) {
         console.log("Record updated");
@@ -253,6 +254,7 @@ function add(event) {
       clearFrom();
       document.getElementById("editBtn").disabled = true;
       document.getElementById("submitBtn").disabled = false;
+      document.getElementById("fillBtn").disabled = false;
     };
   }
 
@@ -274,8 +276,9 @@ function add(event) {
     request.onsuccess = function (event) {
     
       let data = event.target.result;
+      idGlobal = id;
 
-      document.getElementById("idInput").value = id;
+      // document.getElementById("idInput").value = id;
       document.getElementById("fname").value = data.name;
       document.getElementById("flast").value = data.lastName;
       document.getElementById("fmail").value = data.email;
@@ -286,7 +289,7 @@ function add(event) {
   }
 
   function clearFrom(){
-    document.getElementById("idInput").value = ""
+    // document.getElementById("idInput").value = ""
     document.getElementById("fname").value = ""
     document.getElementById("flast").value = ""
     document.getElementById("fmail").value = ""
