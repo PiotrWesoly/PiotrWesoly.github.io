@@ -21,6 +21,7 @@ window.indexedDB =
 let db;
 let request = window.indexedDB.open("newDatabase121", 1);
 var idGlobal;
+var searchBar = document.getElementById("searchBar");
 
 request.onerror = function (event) {
 console.log("error: The database is opened failed");
@@ -29,6 +30,12 @@ console.log("error: The database is opened failed");
 request.onsuccess = function (event) {
 db = request.result;
 console.log("success: The database " + db + " is opened successfully");
+
+document.getElementById("searchBar")
+.addEventListener("input", (event) => {
+  drawTable(event.target.value.split(" "));
+});
+
 drawTable();
 };
 
@@ -210,13 +217,6 @@ function add(event) {
       }
     };
   }
-
-  let searchBar = document.getElementById("searchBar");
-
-  searchBar.addEventListener('input', (event) => {
-    console.log("INPUTTTT");
-  drawTable(event.target.value.split(" "));
-});
 
   function remove(id) {
     let request = db
