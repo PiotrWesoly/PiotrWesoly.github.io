@@ -162,14 +162,13 @@ function add(event) {
       var cursor = event.target.result;
 
       if (cursor) {
-        console.log(filterItems);
         if (filterItems.length > 0 && filterItems[0] !== "") {
           let exists = false;
           for (let i = 0; i < filterItems.length; i++) {
             const element = filterItems[i];
-            
+
             if (Object.values(cursor.value).includes(element)) {
-              exists = true
+              exists = true;
             }
           }
 
@@ -178,6 +177,7 @@ function add(event) {
             return;
           }
         }
+
 
         console.log(cursor.value)
 
