@@ -121,7 +121,7 @@ function add(event) {
 
     request.onsuccess = function (event) {
       alert(
-        "Client added !"
+        "Client added !" 
       );
       console.log("Client added");
       drawTable();
