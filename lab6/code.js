@@ -211,6 +211,13 @@ function add(event) {
     };
   }
 
+  let searchBar = document.getElementById("searchBar");
+
+  searchBar.addEventListener('input', (event) => {
+    console.log("INPUTTTT");
+  drawTable(event.target.value.split(" "));
+});
+
   function remove(id) {
     let request = db
       .transaction(["client"], "readwrite")
@@ -331,7 +338,3 @@ function add(event) {
     drawTable(searchInputs);
   }
 
-  document.getElementById("searchBar")
-          .addEventListener("input", (event) => {
-          drawTable(event.target.value.split(" "));
-        });
